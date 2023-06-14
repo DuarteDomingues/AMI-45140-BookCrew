@@ -1,0 +1,60 @@
+
+* terreno pode alterar velocidade de 0 a 100 %
+
+
+objetos : terreno
+
+objetos móveis : pontos geográficos -> objeto.
+* alterar a posicao
+* orientacao
+* velocidade
+* aceleração
+* fig. geometrica unica (sua forma)
+
+Movimentos são guardados num histórico
+
+
+- modelo ea com pictogramas
+- sistema com postgreSQL baseado no modelo EA
+
+Perseguição:
+
+- presa / predador objeto móvel 
+- registada
+
+Pictogramas
+
+* etiquetar entidades espaciais e os respetivos tipos
+de dados e realizar inferência sobre relações e 
+restrições espaciais.
+
+terreno : alteracao velocidade
+
+rio: linha
+cidade: geometria
+região: centro
+torre_vigia: ponto
+
+QuantumGIS
+
+---------------------------------
+
+Poligono
+
+Regiao
+
+floresta, cidade, rio part of regiao
+
+pantano, torre part of floresta
+
+--------------------------------
+
+Objeto movel(id,vel_min,vel_max)
+
+cinematica (movimento)
+perseguicao(id_presa, id_perseguidor)
+cinematicaHist
+
+
+
+

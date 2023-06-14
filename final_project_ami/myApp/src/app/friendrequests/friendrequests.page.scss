@@ -1,0 +1,132 @@
+
+ion-searchbar{
+   // width: 50%;
+
+    --border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: scaleY(0.9); // Can also scale individually with scaleX() and scaleY()
+    margin: 0 auto;
+ }
+
+
+
+
+
+
+
+
+
+
+.book_rating{
+    color: black;
+    padding-left: 12px;
+ }
+
+
+ .button_back{
+
+    left: 12px;
+    position: relative;
+    background-color:#EBE1D2;
+    color: black;
+ }
+
+ .user_name_rate h5{
+
+   color:#201D1D;
+   font-weight: 600;
+   font-size: 14px;
+   position: relative;
+   left: 10px;
+
+}
+.user_name_rate h6{
+
+   color:#201D1D;
+   font-weight: 100;
+   font-size: 11px;
+   position: relative;
+   left: 10px;
+   margin-top: -6px;
+
+}
+
+
+ .line_separator_2{
+   border-bottom: 1px solid #A39494;
+   position: relative;
+   width: 87%;
+   left: 15px;
+ }
+ 
+ .numb_results{
+
+    padding-top: 62px;
+    color: black;
+    padding-left: 20px;
+    border-bottom: 1px solid #A7A7A7;
+    
+ }
+
+ .numb_results h3{
+    font-size: 12px;
+    font-weight: 600;
+ }
+
+  .button1 {
+   border-color: #848484;
+   border-radius:8px;
+   border-width: thick; 
+   border-style: solid;
+   background-color:  #EBE1D2;
+   color: #fff;
+     padding: 5px;
+     font-size: 15px;
+     border: none;
+     margin-left: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s ease-in-out;
+     margin-top:  6.8%;
+  position: absolute;
+   
+
+       
+  }
+
+   .button2 {
+   border-color: #848484;
+   border-radius:8px;
+   border-width: thick; 
+   border-style: solid;
+   background-color:  #EBE1D2;
+   color: #fff;
+     padding: 5px;
+     font-size: 15px;
+     border: none;
+     cursor: pointer;
+     margin-left: 72px;
+
+     transition: background-color 0.3s ease-in-out;
+     margin-top: 6.8%;
+  position: absolute;
+   
+
+       
+  }
+
+
+
+
+
+
+
+
+  
+  .button1:hover, .button2:hover {
+   background-color: #DAD0C2;
+  }
+
+
+  

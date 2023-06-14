@@ -1,0 +1,351 @@
+
+ion-searchbar {
+   /* width: 50%; */
+   --border-radius: 11px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   transform: scaleY(0.9); /* Can also scale individually with scaleX() and scaleY() */
+   margin: 0 auto;
+ }
+
+ ion-content{
+   --ion-background-color: #F6F6F6;
+}
+ 
+ .header_one {
+   position: fixed;
+   width: 100%;
+   padding-top: 1px;
+   height: 62px;
+   border-bottom: 1px solid #A39494;
+   top: 0;
+   z-index: 999;
+ }
+ 
+ .button_msgs {
+   display: block;
+   float: left;
+   padding-top: 18px;
+   padding-left: 5px;
+   margin-left: 5px;
+ }
+ 
+ .book_img{
+ 
+   height: 112px; 
+   width: 90px;
+   border-radius: 5px;
+ }
+ 
+ 
+ .book_rating{
+    padding-top: 62px;
+    color: black;
+   
+    background-color: #F6F6F6;
+    border-top: 1px solid #A7A7A7;
+    border-bottom: 1px solid #A7A7A7;
+    padding-left: 20px;
+ 
+ }
+ 
+ .user_name_rate h5{
+ 
+    color:#201D1D;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    left: 12px;
+ 
+ }
+ 
+ .user_name_rate span{
+    color: black;
+    font-weight: 100;
+    font-size: 12px;
+    
+ }
+ 
+
+ 
+ 
+ .book_info h5{
+ 
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    left: 15px;
+ 
+ }
+ .book_info h6{
+ 
+    font-size: 12px;
+    font-weight: 100;
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+ }
+ 
+ .book_info{
+    margin-right: 20px;
+ }
+ 
+ 
+ .want_read_button{
+ 
+    --border-color: #848484;
+    --ion-color-primary: #DAD0C2;
+    --border-radius:8px;
+    --border-width: .02em; 
+    --border-style: solid;
+    --ion-font-family: 'Roboto', sans-serif;
+ 
+    width : 105px;
+    height: 20px;
+    font-weight: 60;
+    font-size: 11px;
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+    color: black;
+    --background-hover: #EBE1D2;
+    text-transform: none;
+    
+ 
+ 
+ 
+ }
+ 
+ 
+ .button_rating{
+    background-color: #F6F6F6;
+    color: black;
+ }
+ 
+ .text_comment{
+ 
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 20px;
+ }
+ 
+ .bottom_review h6{
+ 
+    font-weight: 600;
+    font-size: 11px;
+    position: relative;
+    bottom: 8px;
+    
+ }
+ 
+ .bottom_review h5{
+ 
+    font-weight: 100;
+    font-size: 11px;
+    position: relative;
+    bottom: 20px;
+    color:#575757;
+    
+ }
+ 
+ //FOOTER
+ 
+ .footer_pages {
+    position: fixed;
+    padding: 10px 10px 0px 0px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 50px;
+    background: #EBE1D2;
+    background: #EBE1D2;
+    border-top: 1px solid #A39494;
+    color:#201D1D;
+    right: 2px;
+ }
+ 
+ .button_foot{
+ 
+    
+    margin-left:7%;
+ }
+ 
+
+ .user_comments{
+background-color: #F6F6F6;
+ }
+ // U
+ 
+
+#xd{
+   background-color: #F6F6F6;
+
+}
+ .user_comments{
+
+    color: black;
+   
+    background-color: #F6F6F6;
+    padding-left: 20px;
+ }
+
+ .user_comments h3{
+    text-align: center;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: 600;
+ }
+ .user_comments{
+    position: relative;
+    color: #201D1D;
+ }
+
+ .line_separator{
+    
+    width: 50% ;
+    height: 1px;
+    background-color: #848484;
+    padding-right: 20px;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+ 
+ .user_comment h5{
+ 
+    color:#201D1D;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    left: 10px;
+ 
+ 
+ }
+
+ .user_comment h6{
+ 
+    color:#201D1D;
+    font-weight: 0;
+    font-size: 11px;
+    position: relative;
+    left: 10px;
+    bottom: 15px;
+ 
+ }
+ 
+ .user_text_comment{
+
+    
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 20px;
+    position: relative;
+    bottom: 15px;
+ }
+
+ .line_separator_2{
+   border-bottom: 1px solid #A39494;
+   position: absolute;
+   width: 87%;
+   
+ }
+ 
+ //STAR RATING
+ 
+ .rate {
+    height: 20px;
+    color: #ffc700;    
+    position:relative;
+    bottom: 14px;
+    float: left;
+    left: 10px;
+ 
+ }
+ .rate:not(:checked) > input {
+    position:relative;
+    top:-9999px;
+ }
+ .rate:not(:checked) > label {
+    float:left;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:16px;
+    color:#ffc700;
+ }
+ .rate:not(:checked) > label:before {
+    content: '★ ';
+ }
+ .rate > input:checked ~ label {
+    color: #ffc700;    
+ }
+ 
+//ADD COMMENT 
+
+.comment-container {
+   margin-bottom: 16px;
+   text-align: center;
+   bottom: 0;
+   width: 100%;
+   position: fixed;
+   
+ }
+ 
+ /* Style for the comment input field */
+ .comment-input {
+   border: 1px solid #A7A7A7;
+
+   width: 100%;
+   padding: 8px;
+   font-size: 16px;
+   background-color: #F6F6F6;
+   color: black;
+ }
+ 
+ /* Style for the comment button */
+ .comment-button {
+   margin-top: 8px;
+   padding: 8px 16px;
+   background-color: #EBE1D2;
+   color: #fff;
+   font-size: 16px;
+   cursor: pointer;
+ }
+ 
+ /* Style for the comments container */
+ .comments-container {
+   margin-top: 16px;
+   z-index: 9999; 
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+
+ }
+ 
+ /* Style for individual comments */
+ .comment {
+   margin-bottom: 8px;
+ }
+
+ .button_x {
+   margin-top: 8px;
+   padding: 8px 16px;
+
+   border-radius: 11px;
+   color: #fff;
+   background-color:  #EBE1D2;
+   border-radius: 11px;
+   font-size: 16px;
+   transition: background-color 0.3s ease-in-out;
+   cursor: pointer;
+ }
+
+ .button_x:hover{
+   background-color: #DAD0C2;
+ }
+ 

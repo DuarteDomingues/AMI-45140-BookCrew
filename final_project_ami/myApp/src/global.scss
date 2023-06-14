@@ -1,0 +1,112 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+ion-content{
+
+    --ion-background-color: white;
+    --ion-font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+ion-content::part(scroll)::-webkit-scrollbar {
+    display: none;
+    }
+    
+    // Hide scrollbar for IE, Edge and Firefox
+    ion-content::part(scroll) {
+    -ms-overflow-style: none; // IE and Edge
+    scrollbar-width: none; // Firefox
+    }
+
+    .button_foot{
+        background-color: #EBE1D2;
+    }
+
+
+.footer{
+        position: fixed;
+        padding: 10px 10px 0px 10px;
+        bottom: 0;
+        width: 100%;
+        /* Height of the footer*/ 
+        height: 50px;
+        background: #EBE1D2;
+        background: #EBE1D2;
+        border-top: 1px solid #A39494;
+    
+    
+}
+
+.header_one{
+
+    position: fixed;
+    width: 100%;
+    padding-top: 1px;
+    /* Height of the footer*/ 
+    height: 62px;
+    background-color: #EBE1D2;
+    border-bottom: 1px solid #A39494;
+
+}
+
+.button_msgs{
+    position: relative;
+    background-color:#EBE1D2;
+    color: black;
+}
+
+
+
+
+ //FOOTER
+ 
+ .footer_pages {
+    position: fixed;
+    padding: 10px 10px 0px 0px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 50px;
+    background: #EBE1D2;
+    background: #EBE1D2;
+    border-top: 1px solid #A39494;
+    color:#201D1D;
+    right: 2px;
+ }
+ 
+ .button_foot{
+ 
+    
+    margin-left:7%;
+ }
+
+
+ 

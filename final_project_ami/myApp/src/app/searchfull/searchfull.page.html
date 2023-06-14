@@ -1,0 +1,165 @@
+
+<ion-content>
+
+  
+  <div class="header_one" style="    height: 62px;  ">
+    <!-- Default Searchbar -->
+
+
+    <ion-searchbar [(ngModel)]="searchTerm" (keypress)="onSearchKeyPress($event)" style="display: block; float: left; padding-left: 21px;"></ion-searchbar>
+
+    <ion-select [(ngModel)]="selectedOption" style="width: 25%; display: block; float: left;">
+      <ion-select-option  value="option1">
+        <span style="color: red; font-weight: bold;">Books</span>      </ion-select-option>
+      <ion-select-option value="option2">
+        <span style="color: red; font-weight: bold;">Users</span>      </ion-select-option>
+    </ion-select>
+    
+
+
+
+<div class="numb_results" *ngIf="showResults === false">
+  <h3>0 results</h3>
+</div>
+
+<div class="numb_results" *ngIf="showResults && usersInfo.length !== 0">
+  <h3>{{ usersInfo.length }} results</h3>
+</div>
+
+<div class="numb_results" *ngIf="showResults && books.length !== 0">
+  <h3>{{ books.length }} results</h3>
+</div>
+
+
+  <div id="result" *ngFor="let book of books">
+    
+
+
+    <div class="book_info">
+  
+      <div (click)="goToBook(book.id_book)">
+
+      <ng-container *ngIf="book?.ref_foto  === 'default'; else elseBlock">
+        <img class="book_img" style="display: block; float: left;height: 120px;width: 93px;border-radius: 5px;"   src="assets/default.jpg"  >
+      </ng-container>
+      
+      <ng-template #elseBlock>
+        <img class="book_img" style="display: block; float: left;height: 120px;width: 93px;border-radius: 5px;"   src="{{book?.ref_foto}}"  >
+      </ng-template>
+
+    </div>
+
+
+      <div class="text_book">
+        <h5>{{book.title}}</h5>
+        <h6>{{book.autor}}</h6>
+        <div style="float: left;
+        left: 15px;" class="rate">
+          <input type="radio" id="star4" name="rate" value="4" />
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="rate" value="3" />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="rate" value="2" />
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="rate" value="1" />
+          <label for="star1" title="text">1 star</label>
+        </div>
+    
+        
+        <div id="rating">      
+      </div>
+      
+    
+    
+      </div>
+
+    </div>
+
+    <div style="padding-top: 50px;">
+    </div>
+  
+    <br>
+    <div style="height: 10px;"></div>
+    <div class="line_separator_2"></div>
+
+  </div>
+</div>
+
+<div *ngIf="usersInfo.length != 0">
+  <div style="padding-top: 120px;">
+  </div>
+<div class="book_rating" *ngFor="let user of usersInfo">
+
+<div class="book_rating">
+  <div (click)="goOtherUserProfile(user.id_user)" class="user_rating">
+    <ion-avatar class="profile_img" style="display: block; float: left; height: 35px; width: 35px; ">
+      <img style="height: 35px; width: 35px;" src="assets/default_user.jpg">
+    </ion-avatar>
+  </div>
+  <div class="user_name_rate" style="display: inline-block; vertical-align: middle; margin-top: -17px;">
+    <h5>{{user.name_user}}</h5>
+    <h6 >{{user.desc}}</h6>
+
+  </div>  
+</div>
+<br>
+
+
+<div class="line_separator_2"></div>
+
+
+<div style="padding-top: 20px;">
+
+ 
+</div>
+</div>
+
+
+
+</div>
+
+
+
+  <div class="footer_pages">
+    <div class="line"></div>
+    <button class="button_foot"  ion-button (click)="goHome()">
+  
+    <ion-icon name="home" style="width: 25px; height:25px; color:#201D1D; "></ion-icon>
+  
+    </button>
+    <button class="button_foot"  ion-button (click)="goCollection()">
+  
+      <ion-icon name="bookmarks" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+    
+      </button>
+
+      <button class="button_foot"  ion-button (click)="goSearch()">
+  
+        <ion-icon name="search" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+      
+      </button>
+
+    
+  <button class="button_foot"  ion-button (click)="goLogout()">
+  
+    <ion-icon name="log-out" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+  
+  </button>
+
+      <button class="button_foot"  ion-button (click)="goProfile()">
+  
+        <ion-avatar class="profile_img" style=" height: 25px; width: 25px;">
+
+          <img  style=" height: 25px; width: 25px;"  src="assets/default_user.jpg" >
+        </ion-avatar>
+      
+      </button>
+      
+    
+  </div>
+
+
+
+
+
+</ion-content>

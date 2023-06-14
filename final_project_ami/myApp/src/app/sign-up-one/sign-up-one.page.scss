@@ -1,0 +1,48 @@
+ion-content{
+
+    --ion-background-color: white;
+    --ion-font-family: 'Roboto', sans-serif;
+}
+
+.home_picture{
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,h2,h3{
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.bottom_section{
+    text-align: center;
+    color: #201D1D;
+    font-family: 'Roboto', sans-serif;
+}
+
+ion-button{
+
+    --ion-border-color: #CDBBA7;
+    --ion-font-family: 'Roboto', sans-serif;
+    --ion-color-primary: 848484;
+    width : 80%;
+    height: 35px;
+    font-weight: 60;
+
+}
+
+span{
+    color: white;
+}
+
+
+
+
+.filler{
+
+    height: 80px;
+  
+}

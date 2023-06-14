@@ -1,0 +1,86 @@
+
+<ion-content>
+  <div class="header_div">
+    <ion-img id="header_img" style=" height: 170px ;"  src="assets/wide_logo.PNG" ></ion-img>
+  </div>
+  <div class="fill_div">
+  </div>
+  
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+
+  <div class="login">
+  
+    <h1>Sign-up</h1>
+    <p></p>
+    <p></p>
+    <h4>Email</h4>
+    <ion-input type="text" formControlName="email"  placeholder="Your email"></ion-input>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && 
+ (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+    <h4>Password</h4>
+    <ion-input type="password" formControlName="password" placeholder="Your password"></ion-input>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && 
+ (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <h4>Confirm Password</h4>
+    <ion-input type="password" formControlName="confirmpassword" placeholder="Confirm password"></ion-input>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.confirmpassword">
+        <div class="error-message" *ngIf="validations_form.get('confirmpassword').hasError(validation.type) && 
+ (validations_form.get('confirmpassword').dirty || validations_form.get('confirmpassword').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <br>
+    <br>
+ 
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Register
+    </ion-button>
+
+    <label class="error-message">{{errorMessage}}</label>
+    <label class="success-message">{{successMessage}}</label>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+  
+  </div>
+
+</form>
+
+  
+  <div id="footer">
+    <button class="button_foot_back"  ion-button (click)="goBack()">
+    <ion-icon name="arrow-back" style="width: 25px; height:25px;"></ion-icon>
+  </button >
+  <!--<button class="button_foot_forward" id="forward"  (click)="goForward()">
+
+    <ion-icon id="forward_icon" name="arrow-forward" style="width: 25px; height:25px;"></ion-icon>
+  </button> -->
+
+  </div>
+  
+  
+  </ion-content>
+  

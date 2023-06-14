@@ -1,0 +1,252 @@
+
+<ion-content>
+  <div id="bookinfo">
+  
+    <button class="button_foot_back"  ion-button (click)="goBackButton()">
+      <ion-icon name="arrow-back" style="width: 25px; height:25px;"></ion-icon>
+    </button >
+  
+  
+  
+  
+    <div class="filler">
+  
+    </div>
+  
+    <ng-container *ngIf="book.ref_foto === 'default'; else elseBlock">
+    <img class="book_img" style="display: block; float: left;"   src="assets/default.jpg"  >
+  </ng-container>
+  
+  <ng-template #elseBlock>
+    <img class="book_img" style="display: block; float: left;"   src="{{book.ref_foto}}"  >
+  </ng-template>
+  
+  
+    </div>
+    <div class="book_stuff">
+  
+      <div class="filler_2">
+  
+      </div>
+      <h2>{{book.title}}</h2>
+      <h3>{{book.autor}}</h3>
+  
+      <div class="book_rating_pages">
+        <div id="filler_3"></div>
+        
+        <h6 class="book_val">4.4</h6>
+        <div id="stick"> </div>
+    <div id="pp">
+        <h6>{{book.num_pag}}</h6>
+      </div>
+      </div>
+  
+      <div class="small_text">
+      <h4>Rating</h4>
+    </div>
+    <div class="ppmd">
+      <h4>Pages</h4>
+  
+    </div>
+   
+    <div style="height:5px"></div>
+  
+    <br>
+  
+    <div class="dropdown-container">
+      <ng-container *ngIf="bookCol===0; else elseBlockx">
+      <select id="myDropdown" class="dropdown">
+        <option value="" disabled selected>
+          {{ bookCol === 0 ? 'Select Status' :
+              bookCol === 1 ? 'Reading' :
+              bookCol === 2 ? 'Already read' :
+              bookCol === 3 ? 'Want to read' :
+              'Select Status' }}
+        </option>
+        <option value="3">Want to read</option>
+        <option value="1">Reading</option>
+        <option value="2">Already read</option>
+      </select>
+      <div style="height:5px"></div>
+  
+      <button class="button_x" (click)="onButtonClick()" >Add to Collection</button>
+    </ng-container>
+    <ng-template #elseBlockx >
+      <div class="centered-content">
+      <button class="button_x" (click)="onButtonRemove()" >Remove from Collection</button>
+      </div>
+    </ng-template>
+  </div>
+  
+    
+  
+      <div class="book_overview">
+      <!--<ion-button class="want_read_button"(click)="openLogin()" >
+           
+        want to read<span> </span>  <ion-icon name="arrow-down"></ion-icon>
+     </ion-button>
+    -->
+  
+  
+  
+    
+     <div style="height:15px"></div>
+  
+     <h3>Overview</h3>
+     <div id="comment_div">
+     <div class="line_separator"></div>
+  
+     <div id="text_ov">
+      <div style="height:5px"></div>
+      <div style="text-align: center" *ngIf="book.desc && book.desc.length< 30; else loggedOut">
+      <p>{{book.desc}} </p>
+      </div>
+      <ng-template #loggedOut>
+      <p>{{book.desc}} </p>
+    </ng-template>
+
+
+        <div style="height:1px"></div>
+        <div class="line_separator"></div>
+     </div>
+    </div>
+    
+  <div style="margin-top:-6px"></div>
+     <h3 >Reviews</h3>
+     <div id="review_div">
+     <div class="line_separator"></div>
+  
+     <div style="height:5px"></div>
+     <div class="user_rating" *ngFor="let critic of critics">
+  
+  
+      <div (click)="goOtherUserProfile(getUserInfo(critic.id_user)?.id_user)">
+  
+      <ion-avatar class="profile_img" style="display: block; float: left; height: 35px; width: 35px;">
+  
+      <img  style=" height: 35px; width: 35px;"  src="assets/default_user.jpg" >
+    </ion-avatar>
+  
+  </div>
+  
+     <div class="user_name_rate">
+      
+      <div style="text-align: left;" class="help">
+      <h5 style="">{{getUserInfo(critic.id_user)?.name_user}}&nbsp;&nbsp;<span> rated with</span></h5>
+      </div>
+
+
+      <ng-container *ngIf="critic.classif===5">
+  
+      <div class="rate_2">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===4">
+  
+      <div class="rate_2">
+       
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===3">
+  
+      <div class="rate_2">
+  
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===2">
+  
+      <div class="rate_2">
+  
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===1">
+  
+      <div class="rate_2">
+  
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container> 
+      <br>
+      <!--<p>Thursday at 23:40</p> -->
+    
+    <div style="height:2px"></div>
+    <div class="text_comment">
+      {{critic.text}}
+    </div>
+  </div>
+  
+  <br>
+  <div   class="line_separator_2"></div>
+  
+     </div>
+    </div>
+  
+  
+    <div id="stick_ref">
+  
+  
+    </div>
+  <br>
+  
+  <div class="rate_div">
+    <div style="height:5px"></div>
+  
+    <h3 style="margin-top:2px">Rate</h3>
+  
+    <div style="margin-top:5px" class="rating">
+      <input type="radio" name="rating" value="5" id="5" [(ngModel)]="selectedRating"><label for="5">☆</label>
+      <input type="radio" name="rating" value="4" id="4" [(ngModel)]="selectedRating"><label for="4">☆</label>
+      <input type="radio" name="rating" value="3" id="3" [(ngModel)]="selectedRating"><label for="3">☆</label>
+      <input type="radio" name="rating" value="2" id="2" [(ngModel)]="selectedRating"><label for="2">☆</label>
+      <input type="radio" name="rating" value="1" id="1" [(ngModel)]="selectedRating"><label for="1">☆</label>
+    </div>
+  
+    <div style="height: 20px;"></div>
+  
+  </div>
+  
+    </div>
+  
+    
+    </div>
+  
+    <div class="comment-container">
+      <input [(ngModel)]="newCritic" class="comment-input" placeholder="Enter your critic..." />
+      <button style=""  class="button_x_end" (click)="submitCritic()">Submit</button>
+    </div> 
+  
+  </ion-content>
+  

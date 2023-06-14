@@ -1,0 +1,214 @@
+<ion-content>
+
+  <div class="header_one" style="    height: 62px;  ">
+    <!-- Default Searchbar -->
+<ion-searchbar style="width: 81%; display: block; float: left; padding-left: 21px;"></ion-searchbar>
+
+<button class="button_msgs" style="display: block;padding-top: 18px;padding-left: 5px;"   ion-button (click)="goMap()">
+
+  <ion-icon name="map" style=" width: 25px; height:25px"></ion-icon>
+
+  </button>
+
+
+  </div>
+
+  <div class="overview">
+
+    <h3>Collection</h3>
+   <div class="line_separator"></div>
+
+<br>
+    <div class="collection_div">
+      <div id="tag" (click)="goCollectionFull('Already read',1)">
+      <h4>Already read</h4>
+    </div>
+      <br>
+      <br>
+      <br>
+      
+
+      <div class="box_1"  *ngIf="BooksAlreadyRead.length === 0">
+
+      <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="assets/default.jpg">
+      <div style="height: 5px;"></div>
+
+        <h3>Empty collection</h3>
+   
+        <h5>Add books</h5>
+        
+      </div>
+
+      <div class="box_1"  *ngFor="let book of BooksAlreadyRead">
+
+        <div (click)="goToBook(book.id_book)">
+
+
+        <ng-container *ngIf="book?.ref_foto  === 'default'; else elseBlock">
+          <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="assets/default.jpg">
+        </ng-container>
+        
+        <ng-template #elseBlock>
+          <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"    src="{{book?.ref_foto}}">
+        </ng-template>
+
+      </div>
+      <div style="height: 5px;"></div>
+
+        <h3>{{book.title}}</h3>
+   
+        <h5>{{book.autor}}</h5>
+        
+      </div>
+     
+  
+      
+
+    </div>
+
+    <br>
+
+    <div class="collection_div">
+      <div id="tag" (click)="goCollectionFull('Reading',2)">
+      <h4>Reading</h4>
+    </div>
+      <br>
+      <br>
+      <br>
+
+      <div class="box_1"  *ngIf="BooksReading.length === 0">
+
+        <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="assets/default.jpg">
+        <div style="height: 5px;"></div>
+
+          <h3>Empty collection</h3>
+     
+          <h5>Add books</h5>
+          
+        </div>
+      
+      <div class="box_1"  *ngFor="let book of BooksReading">
+
+        <div (click)="goToBook(book.id_book)">
+
+        <ng-container *ngIf="book?.ref_foto  === 'default'; else elseBlock">
+          <img class="book_img" style="display: block; float: left;"   src="assets/default.jpg"  >
+        </ng-container>
+        
+        <ng-template #elseBlock>
+          <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="{{book?.ref_foto}}"  >
+        </ng-template>
+
+      </div>
+      <div style="height: 5px;"></div>
+
+        <h3>{{book.title}}</h3>
+   
+        <h5>{{book.autor}}</h5>
+
+
+      </div>
+     
+
+      
+
+    </div>
+    <br>
+
+    <div class="collection_div">
+      <div id="tag" (click)="goCollectionFull('Want to read',0)">
+      <h4>Want to Read</h4>
+    </div>
+      <br>
+      <br>
+      <br>
+
+      
+      <div class="box_1"  *ngIf="BooksToRead.length === 0">
+
+        <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="assets/default.jpg">
+        <div style="height: 5px;"></div>
+
+          <h3>Empty collection</h3>
+     
+          <h5>Add books</h5>
+          
+        </div>
+
+      
+      <div class="box_1"  *ngFor="let book of BooksToRead">
+
+        <div (click)="goToBook(book.id_book)">
+
+        <ng-container *ngIf="book?.ref_foto  === 'default'; else elseBlock">
+          <img class="book_img" style="display: block; float: left;"   src="assets/default.jpg"  >
+        </ng-container>
+        
+        <ng-template #elseBlock>
+          <img class="book_img"style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="{{book?.ref_foto}}"  >
+        </ng-template>
+
+      </div>
+      <div style="height: 5px;"></div>
+
+        <h3>{{book.title}}</h3>
+   
+        <h5>{{book.autor}}</h5>
+
+
+      </div>
+      
+
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </div>
+
+
+  
+  <div class="footer_pages">
+    <div class="line"></div>
+    <button class="button_foot"  ion-button (click)="goHome()">
+  
+    <ion-icon name="home" style="width: 25px; height:25px; color:#201D1D; "></ion-icon>
+  
+    </button>
+    <button class="button_foot"  ion-button (click)="goCollection()">
+  
+      <ion-icon name="bookmarks" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+    
+      </button>
+
+      <button class="button_foot"  ion-button (click)="goSearch()">
+  
+        <ion-icon name="search" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+      
+      </button>
+
+      <button class="button_foot"  ion-button (click)="goLogout()">
+  
+        <ion-icon name="log-out" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+      
+      </button>
+
+      <button class="button_foot"  ion-button (click)="goProfile()">
+
+        <ion-avatar class="profile_img" style=" height: 25px; width: 25px;">
+
+          <img  style=" height: 25px; width: 25px;"  src="assets/default_user.jpg" >
+        </ion-avatar>
+       
+
+      </button>
+      
+    
+  </div>
+
+
+</ion-content>

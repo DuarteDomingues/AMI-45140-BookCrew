@@ -1,0 +1,498 @@
+ion-content{
+    --ion-background-color: linear-gradient(180deg, rgba(163, 148, 148, 0.9) 0%, rgba(255, 255, 255, 1) 100%);
+    color: black;
+}
+
+.header_one {
+    position: fixed;
+    width: 100%;
+    padding-top: 1px;
+    height: 62px;
+    border-bottom: 1px solid #A39494;
+    top:0;
+    z-index: 999; 
+  }
+  
+.filler{
+
+    height: 130px;
+}
+
+.book_img{
+    height: 140px; 
+    width: 115px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.button_x {
+
+    padding: 6px 13px;
+    margin-top: 5px;
+    border-radius: 11px;
+    color: #fff;
+    background-color:  #EBE1D2;
+    border-radius: 11px;
+    font-size: 15px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+
+  }
+
+  .button_x:hover{
+    background-color: #DAD0C2;
+  }
+
+  .button_x_end {
+    margin-top: 8px;
+    padding: 8px 16px;
+ 
+    border-radius: 11px;
+    color: #fff;
+    background-color:  #EBE1D2;
+    border-radius: 11px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+ 
+  .button_x_end:hover{
+    background-color: #DAD0C2;
+  }
+  
+  
+
+.book_stuff{
+
+    background-color: #F6F6F6;
+    color: black;
+    border-top: 1px solid ;
+    border-radius: 25px 25px 0px 0px;
+
+}
+
+.filler_2{
+    height: 70px;
+}
+
+.book_stuff h2{
+
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.book_stuff h3{
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    position: relative;
+    bottom: 10px;
+}
+
+#stick{
+
+    height: 22px;
+    width: 1px;
+    background-color: black;
+    position: relative;
+    left: 13px;
+    bottom: 26px;
+}
+
+.book_rating_pages{
+    position: absolute;
+     left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#pp h6{
+    position: relative;
+    left: 22px;
+    bottom: 67px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.book_rating_pages h6{
+    position: relative;
+    right: 18px;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.small_text {
+
+    position: absolute;
+    left: 50%;
+   transform: translate(-50%, -50%);
+
+}
+
+.small_text h4{
+    font-size:9px;
+    position: relative;
+    right: 19px;
+    top: 5px;
+    font-weight: 100;
+}
+
+.ppmd {
+    position: absolute;
+    left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.ppmd h4{
+    font-size: 9px;
+    position: relative;
+    font-weight: 100;
+    left: 21px;
+    top: 5px;
+
+}
+
+
+
+
+
+#filler_3{
+    height: 50px;
+}
+
+.want_read_button{
+ 
+    --border-color: #848484;
+    --ion-color-primary: #DAD0C2;
+    --border-radius:8px;
+    --border-width: .02em; 
+    --border-style: solid;
+    --ion-font-family: 'Roboto', sans-serif;
+ 
+    width : 105px;
+    height: 20px;
+    font-weight: 60;
+    font-size: 11px;
+    position: relative;
+    top: 10px;
+    color: black;
+    --background-hover: #EBE1D2;
+    text-transform: none;
+
+ }
+
+ .book_overview{
+    text-align: center;
+ }
+
+ .book_overview h3{
+
+    font-size: 15px;
+    font-weight: 500;
+ }
+
+ .line_separator{
+
+    width: 50% ;
+    height: 1px;
+    background-color: #848484;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line_separator_2{
+    border-bottom: 1px solid #A39494;
+    position: absolute;
+    width: 86%;
+    
+  }
+
+
+
+
+#text_ov {
+
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 19px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+#comment_div{
+    position: relative;
+    bottom: 10px;
+}
+
+
+.rate_div h4{
+
+    font-size: 16px;
+}
+
+
+.puss{
+   text-align: center;
+
+}
+
+.rate_div{
+
+    position: relative;
+    bottom: 12px;
+}
+
+
+#review_div{
+    position: relative;
+    bottom: 10px;
+}
+
+.user_name_rate h5{
+    color:#201D1D;
+   font-weight: 600;
+   font-size: 14px;
+   position: relative;
+   left: 12px;
+ }
+ 
+ .user_name_rate span{
+    color: black;
+    font-weight: 100;
+    font-size: 12px;
+    
+ }
+
+.user_rating{
+    padding-left: 20px;
+}
+
+.text_comment{
+ 
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 20px;
+    text-align: left;
+ }
+
+
+
+
+ .button_foot_back{
+    position: absolute;
+    left:14px;
+    top: 20px;
+    background: transparent;
+    color: black;
+ }
+
+
+
+
+
+// STAR RATING *******
+
+.rate {
+    float: left;
+    height: 20px;
+    padding: 0 10px;
+    color: #ffc700;   
+    position:relative;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:20px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+
+
+/*
+#stick_ref{
+
+    width: 1px ;
+    height: 300px;
+    background-color: purple;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+*/
+
+
+.rate_2 {
+    height: 20px;
+    color: #ffc700;    
+    position:relative;
+    bottom: 14px;
+    float: left;
+    left: 10px;
+ 
+ }
+ .rate_2:not(:checked) > input {
+    position:relative;
+    top:-9999px;
+ }
+ .rate_2:not(:checked) > label {
+    float:left;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:16px;
+    color:#ffc700;
+ }
+ .rate_2:not(:checked) > label:before {
+    content: '★ ';
+ }
+ .rate_2 > input:checked ~ label {
+    color: #ffc700;    
+ }
+ 
+
+//ADD COMMENT 
+
+.comment-container {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  /* Style for the comment input field */
+  .comment-input {
+    border: 1px solid #A7A7A7;
+
+   width: 100%;
+   padding: 8px;
+   font-size: 16px;
+   background-color: #F6F6F6;
+   color: black;
+  }
+  
+  /* Style for the comment button */
+  .comment-button {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+  }
+  
+  /* Style for the comments container */
+  .comments-container {
+    margin-top: 16px;
+  }
+  
+  /* Style for individual comments */
+  .comment {
+    margin-bottom: 8px;
+  }
+
+
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dropdown {
+    max-width: 150px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    margin-top: 8px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+
+
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+    .rating > input{
+     display:none;
+    }
+    .rating > label {
+    position: relative;
+    width: 1.1em;
+    font-size: 10vw;
+    color: #FFD700;
+    cursor: pointer;
+    }
+    .rating > label::before{
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+    }
+    .rating > label:hover:before,
+    .rating > label:hover ~ label:before {
+    opacity: 1 !important;
+    }
+    .rating > input:checked ~ label:before{
+    opacity:1;
+    }
+    .rating:hover > input:checked ~ label:before{
+    opacity: 0.4;
+     }

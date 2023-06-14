@@ -1,0 +1,303 @@
+
+<ion-content>
+
+
+  <div class="header_one" style="    height: 62px;  ">
+    <!-- Default Searchbar -->
+<ion-searchbar style="width: 81%; display: block; float: left; padding-left: 21px;"></ion-searchbar>
+
+<button class="button_msgs" style="display: block;padding-top: 18px;padding-left: 5px;"   ion-button (click)="goMap()">
+
+  <ion-icon name="map" style=" width: 25px; height:25px"></ion-icon>
+
+  </button>
+
+  </div>
+  
+
+
+  <div class="user_rating">
+    
+    <ion-avatar class="profile_img" style="display: block; float: left; height: 40px; width: 40px;">
+
+      <img  style=" height: 40px; width: 40px;"  src="assets/default_user.jpg" >
+      </ion-avatar>
+
+      <div class="bts">
+
+      <div *ngIf="isFriend==3">
+      <button style="display:inline-block;" class="dropbtn2"  (click)="sendRequest()">Send<span class="kappa" style="color:#EBE1D2">a</span>Request</button>
+      </div>
+
+      <div *ngIf="isFriend==2">
+        <button style="display:inline-block;" class="dropbtn2"  (click)="sendRequest()">Remove<span class="kappa" style="color:#EBE1D2">a</span>Request</button>
+      </div>
+      
+
+
+
+    <div class="dropdown">
+      <button class="dropbtn" (click)="goFriends()">
+             Friends
+      </button>
+        <br>
+        <br>
+      <div class="dropdown-content" >
+       
+        <div id="aux" *ngFor="let friend of usersInfo">
+        
+        <div>
+        
+        </div>
+        </div>
+      </div>
+  
+  </div>
+
+
+</div>
+
+<div style="margin-top:-10px" class=user_name_rate_1>
+
+  <h5>{{user?.name_user}}</h5>
+
+  </div>
+
+  <div style="margin-top:-5px" class="text_comment">
+    {{user?.desc}}
+  </div>
+  <div *ngIf="isCurr === 'false'">
+    <br>
+    
+  </div>
+  
+  </div>
+  <br>
+
+
+  <div class="collection_div">
+      <div id="tag" (click)="goCollection()">
+      <h4>Collection</h4>
+    </div>
+      <br>
+      <br>
+      <br>
+
+      <div class="box_1"  *ngIf="booksCol.length === 0">
+
+        <img class="book_img" style="height: 120px; width: 93px; border-radius: 5px; display: block; margin: auto; margin-top: -33%;"   src="assets/default.jpg">
+        <div style="height: 5px;"></div>
+
+          <h3>Empty collection</h3>
+     
+          <h5>No books added yet.</h5>
+          
+        </div>
+
+      
+      <div class="box_1"  *ngFor="let book of booksCol">
+
+        <div (click)="goToBook(book.id_book)">
+
+        <ng-container *ngIf="book?.ref_foto  === 'default'; else elseBlock">
+          <img class="book_img" style="display: block; float: left;"   src="assets/default.jpg"  >
+        </ng-container>
+        
+        <ng-template #elseBlock>
+          <img class="book_img"   src="{{book?.ref_foto}}"  >
+        </ng-template>
+
+      </div>
+      <div style="height: 5px;"></div>
+
+      <h3>{{book.title}}</h3>
+   
+      <h5>{{book.autor}}</h5>
+
+
+      </div>
+     
+
+
+    </div>
+    <br>
+
+    <div class="book_rating" *ngFor="let critic of critics" >
+
+      <div class="user_ratingg">
+  
+    <div >
+      <ion-avatar class="profile_img" style="display: block; float: left; height: 35px; width: 35px;">
+  
+      <img  style=" height: 35px; width: 35px;"  src="assets/default_user.jpg" >
+    </ion-avatar>
+  </div>
+  
+    <div class=user_name_rate>
+  
+    <h5 style="">{{ user.name_user }}&nbsp;&nbsp;<span> rated with</span></h5>
+  
+    <ng-container *ngIf="critic.classif===5">
+
+      <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===4">
+  
+      <div class="rate">
+       
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===3">
+  
+      <div class="rate">
+  
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===2">
+  
+      <div class="rate">
+  
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="critic.classif===1">
+  
+      <div class="rate">
+  
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </ng-container>
+    
+    <br>
+    <!--<p>Thursday at 23:40</p> -->
+  </div>
+  
+    <div class="book_info">
+    
+      <div (click)="goToBook(critic.id_book)">
+      <ng-container *ngIf="getBook(critic.id_book)?.ref_foto  === 'default'; else elseBlock">
+        <img class="book_img_2" style="display: block; float: left;"   src="assets/default.jpg"  >
+      </ng-container>
+      
+      <ng-template #elseBlock>
+        <img class="book_img_2" style="display: block; float: left;"   src="{{getBook(critic.id_book)?.ref_foto}}"  >
+      </ng-template>
+      
+    </div>
+  
+    <div class="text_book">
+      <h5>{{ getBook(critic.id_book)?.title }}</h5>
+      <h6>{{ getBook(critic.id_book)?.autor }}</h6>
+      <div style="float: left;
+      left: 15px;" class="rate">
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>
+    </div>
+  </div>
+  <div style="height: 37px;"></div>
+  
+  
+ 
+  <br>
+  <br>
+  <div class="text_comment">
+   {{critic.text}}
+  </div>
+  <div class="bottom_review">
+  <h6>{{critic.num_likes}} likes</h6>
+  
+  </div>
+    </div>
+  
+    </div>
+  
+    <div style="padding-top: 50px;">
+    </div>
+
+
+
+  <div class="footer_pages">
+    <div class="line"></div>
+    <button class="button_foot"  ion-button (click)="goHome()">
+  
+    <ion-icon name="home" style="width: 25px; height:25px; color:#201D1D; "></ion-icon>
+  
+    </button>
+    <button class="button_foot"  ion-button (click)="goCollection()">
+  
+      <ion-icon name="bookmarks" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+    
+      </button>
+
+      <button class="button_foot"  ion-button (click)="goSearch()">
+  
+        <ion-icon name="search" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+      
+      </button>
+
+   
+  <button class="button_foot"  ion-button (click)="goLogout()">
+  
+    <ion-icon name="log-out" style="width: 25px; height:25px; color:#201D1D"></ion-icon>
+  
+  </button>
+
+      <button class="button_foot"  ion-button (click)="goProfile()">
+  
+        <ion-avatar class="profile_img" style=" height: 25px; width: 25px;">
+
+          <img  style=" height: 25px; width: 25px;"  src="assets/default_user.jpg" >
+        </ion-avatar>
+      
+      </button>
+      
+    
+  </div>
+
+
+
+
+
+
+
+</ion-content>
